@@ -33,7 +33,9 @@ export default function styleConstructor(theme: Theme = {}) {
     },
     today: {
       backgroundColor: appStyle.todayBackgroundColor,
-      borderRadius: 16
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: '#0078CE',
     },
     todayText: {
       color: appStyle.todayTextColor
