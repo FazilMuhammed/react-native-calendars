@@ -9,8 +9,8 @@ export default function styleConstructor(theme = {}) {
             alignItems: 'center'
         },
         base: {
-            width: 40,
-            height: 32,
+            width: 45,
+            height: 35,
             alignItems: 'center'
         },
         text: {
@@ -31,7 +31,7 @@ export default function styleConstructor(theme = {}) {
         },
         today: {
             backgroundColor: appStyle.todayBackgroundColor,
-            borderRadius: 16,
+            borderRadius: 20,
             borderWidth: 1,
             borderColor: '#0078CE'
         },
