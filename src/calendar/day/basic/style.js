@@ -9,7 +9,7 @@ export default function styleConstructor(theme = {}) {
             alignItems: 'center'
         },
         base: {
-            width: 32,
+            width: 40,
             height: 32,
             alignItems: 'center'
         },
