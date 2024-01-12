@@ -102,8 +102,22 @@ const CalendarHeader = forwardRef((props, ref) => {
         const onPress = !shouldDisable ? isLeft ? onPressLeft : onPressRight : undefined;
         const imageSource = isLeft ? require('../img/previous.png') : require('../img/next.png');
         const renderArrowDirection = isLeft ? 'left' : 'right';
-        return (<TouchableOpacity onPress={onPress} disabled={shouldDisable} style={[style.current.arrow, { backgroundColor:'#ffffff',elevation: 4,borderRadius: 5, shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}]} hitSlop={hitSlop} testID={`${testID}.${arrowId}`}>
-        {renderArrow ? (renderArrow(renderArrowDirection)) : (<Image source={imageSource} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage}/>)}
+        return (<TouchableOpacity 
+            onPress={onPress} 
+            disabled={shouldDisable} 
+            activeOpacity={0.8}
+            style={{ padding: 5, elevation: 2, borderRadius: 5,backgroundColor:'#ffffff', shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}}
+            // style={[style.current.arrow, { backgroundColor:'#ffffff',elevation: 2,borderRadius: 5, shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}]} 
+            hitSlop={hitSlop} 
+            testID={`${testID}.${arrowId}`}>
+            {renderArrow ? (renderArrow(renderArrowDirection)) :
+        (
+        <Image source={imageSource} 
+        style={{ width: 30, height: 30}}
+        // style={[shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage]}
+        />
+        )
+        }
       </TouchableOpacity>);
     };
     const renderIndicator = () => {
