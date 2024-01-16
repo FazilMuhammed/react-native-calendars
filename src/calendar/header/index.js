@@ -106,15 +106,13 @@ const CalendarHeader = forwardRef((props, ref) => {
             onPress={onPress} 
             disabled={shouldDisable} 
             activeOpacity={0.8}
-            style={{ padding: 5, elevation: 2, borderRadius: 5,backgroundColor:'#ffffff', shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}}
-            // style={[style.current.arrow, { backgroundColor:'#ffffff',elevation: 2,borderRadius: 5, shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}]} 
+            style={Platform.OS === 'android' ? { padding: 5, elevation: 2, borderRadius: 5,backgroundColor:'#ffffff', shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1} : [style.current.arrow, { backgroundColor:'#ffffff',elevation: 2,borderRadius: 5, shadowColor: '#515151', shadowOffset: {width: 0, height: 0}, shadowOpacity: 0.2, shadowRadius: 1}]}
             hitSlop={hitSlop} 
             testID={`${testID}.${arrowId}`}>
             {renderArrow ? (renderArrow(renderArrowDirection)) :
         (
         <Image source={imageSource} 
-        style={{ width: 30, height: 30}}
-        // style={[shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage]}
+           style={Platform.OS === 'android' ?  { width: 30, height: 30} : [shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage]}
         />
         )
         }
